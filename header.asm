@@ -1,0 +1,77 @@
+	.inesprg 2
+	.ineschr 1
+	.inesmap 0
+	.inesmir 0
+
+
+
+; PPU
+    .org 0x2000
+PPU_00_CTRL1 .ds 1
+PPU_01_CTRL2 .ds 1
+PPU_02_STATUS .ds 1
+SPR_03_ADDR .ds 1
+SPR_04_IO .ds 1
+VRAM_05_ADDR1 .ds 1
+VRAM_06_ADDR2 .ds 1
+VRAM_07_IO .ds 1
+; pAPU
+    .org 0x4000
+SND_00_PULSE1_CTRL .ds 1
+SND_01_PULSE1_RAMP_CTRL .ds 1
+SND_02_PULSE1_FT .ds 1
+SND_03_PULSE1_CT .ds 1
+SND_04_PULSE2_CTRL .ds 1
+SND_05_PULSE2_RAMP_CTRL .ds 1
+SND_06_PULSE2_FT .ds 1
+SND_07_PULSE2_CT .ds 1
+SND_08_TRI_CTRL1 .ds 1
+SND_09_TRI_CTRL2 .ds 1
+SND_0A_TRI_FREQ1 .ds 1
+SND_0B_TRI_FREQ2 .ds 1
+SND_0C_NOISE_CTRL1 .ds 1
+SND_0D_NOISE_CTRL2 .ds 1
+SND_0E_NOISE_FREQ1 .ds 1
+SND_0F_NOISE_FREQ2 .ds 1
+SND_10_DMC_CTRL .ds 1
+SND_11_DMC_DA .ds 1
+SND_12_DMC_ADDR .ds 1
+SND_13_DMC_DL .ds 1
+SPR_14_DMA .ds 1
+SND_15_CLOCK .ds 1
+SND_16 .ds 1
+SND_17_FRAME_IRQ .ds 1
+JOYPAD1 = SND_16
+JOYPAD2 = SND_17_FRAME_IRQ
+; UNROM
+    .org 0x8000
+UNROM .ds 1
+; CNROM
+    .org 0x8000
+CNROM .ds 1
+; MMC1
+    .org 0x8000
+MMC1_CTRL .ds 1
+    .org 0xA000
+MMC1_VROM_LOW .ds 1
+    .org 0xC000
+MMC1_VROM_HIGH .ds 1
+    .org 0xE000
+MMC1_PRG .ds 1
+; MMC3
+    .org 0x8000
+MMC3_CMD .ds 1
+MMC3_PAGE .ds 1
+    .org 0xA000
+MMC3_MIRR .ds 1
+MMC3_SRAM .ds 1
+    .org 0xC000
+MMC3_CLOCK .ds 1
+MMC3_CLOCK_LATCH .ds 1
+    .org 0xE000
+MMC3_CLOCK_OFF .ds 1
+MMC3_CLOCK_ON .ds 1
+	
+	
+	
+	.include "define.inc"
